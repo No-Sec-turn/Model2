@@ -1,5 +1,33 @@
 # Model2
-Model2 수업내용 정리
+<b>2020.11.02 수업내용 정리<b>
+  Model2 개발을 위한 WorkBench 환경 설정 <br>
+   
+  1. file - switch workspace<br>
+    ->새로운 워크스페이스 설정 후 launch<br>
+
+2. general - Editor - Text Editor - Spelling<br>
+   -> Enable spell checking 체크 해제<br>
+
+3. general - Web Browser <br>
+   -> chrome 설정<br>
+
+4. general - Workspace<br>
+   -> Text file encoding : UTF-8 로 설정<br>
+
+5. Server - Server Runtime Environments<br>
+  -> Add  -> Apach Tomcat 8.0 next -> Tomcat installation directory : C드라이버 Appach Tomcat 폴더 설정 -> Finish<br>
+
+6. server 탭에서 apach tomcat 8.0 Finish<br>
+
+7. new - Dynamic project - Test이름으로 프로젝트 만들기 - Finish<br>
+
+8. Java Resources에서 class 파일생성 - Supperclass에 HttpServlet 설정 <br>
+
+
+※ Model2 수업때 cntl F11(개발자 입장) 눌리지 않는다!!
+   -> 주소로만 확인 
+   
+   
 
 ![WebActivation](https://user-images.githubusercontent.com/70615344/97847940-b90b5f80-1d33-11eb-927e-794780b70cc6.png)
 
