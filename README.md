@@ -83,5 +83,6 @@ POST 방식 : 파라미터를 본문(body)안에 담아서 전송 -> 보안이 �
 <b>2020.11.10 핵심 </b>
 
 <pre>
-![MVC 패턴 흐름](https://user-images.githubusercontent.com/70615344/98668314-0d958700-2393-11eb-9e39-755b0d8182c8.png)
+
 </pre>
+![MVC 패턴 흐름](https://user-images.githubusercontent.com/70615344/98668314-0d958700-2393-11eb-9e39-755b0d8182c8.png)
