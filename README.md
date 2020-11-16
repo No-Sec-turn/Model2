@@ -88,30 +88,30 @@ POST 방식 : 파라미터를 본문(body)안에 담아서 전송 -> 보안이 �
 ![MVC 패턴 흐름](https://user-images.githubusercontent.com/70615344/98668314-0d958700-2393-11eb-9e39-755b0d8182c8.png) <br><br>
 
 
-<pre>
-  ※ MVC 패턴 - 게시판 동작 흐름
-   1. 웹 브라우저 요청 URL - /BoardWriteForm.bo 발생
-   2. *.bo 서블릿 주소가 요청되면 BoardFrontController 실행
-      => @WebServlet("*.bo") Annotation에 의해 Servlet 주소 식별
-   3. BoardFrontController 에서 Servlet 주소 매핑을 통해 Board 폴더 내의 qna_board_write.jsp 페이지로 포워딩
-      => Dispatcher 방식 포워딩을 통해 URL 주소 변경없이 view 페이지(.jsp)로 이동 
-          (즉, 주소창에 BoardWriteForm.bo 서블릿 주소가 그대로 유지)
-   4. qna_board_write.jsp 페이지에서 글쓰기 버튼 클릭시(from 태그에서 Action="BoardWritePro.bo" Post방식으로 넘김)
-       => /BoardWritePro.bo 서블릿 주소 요청
-   5. BoardFrontController 에서 BoardWriteProAction 클래스 인스턴스 생성 후 인스턴스 내의 execute() 메서드 호출
-      => 새로운 서블릿 주소(BoardWritePro.bo)로 변경하기 위해 Redirect 방식으로 포워딩
-   6. BoardWriteProAction 클래스에서 글쓰기 요청에 대한 작업을 요청하기 위해 
-       BoardWriteProService 클래스의 registArticle()메서드(글등록) 호출
-   7. registArticle() 메서드에서 글쓰기 작업 요청을 위해 BoardDAO 클래스의 insertArticle() 메서드 호출
-   8. insertArticle() 메서드에서 글쓰기 작업 수행 후 글쓰기 결과값을 리턴
-       (글 쓰기 성공시 1, 실패시 0리턴 됨)
-   9. BoardDAO 로부터 리턴값을 전달 받은 BOardWriteProService 클래스에서 글쓰기 성공 여부 판별
-      => 글 쓰기 성공 시 boolean 값 isWriteSuccess 를 true 로 변경하고, commit 작업 수행
-   10. boolean 값을 리턴 받은 BoardWriteProACtion 클래스에서 
-       1) 리턴값이 false 일 경우 자바 스크립트를 사용하여 실패 메시지 출력 후  이전 페이지로 돌아가기 수행
-       2) 리턴값이 true 일 경우 ActionForward 객체를 생성하여 BoardList.bo 서블릿 주소를 Redirect 방식으로 포워딩 설정
-          => ActionList.bo 서블릿 주소를 Redirect 방식으로 포워딩 설정
-   11. ActionForward 객체를 리턴받은 BoardFrontController 클래스에서 ACtionForward 객체의 포워딩 방식에 따라
-       Redirect 또는 Dispatcher 방식으로 포워딩 수행
+<p>
+  ※ MVC 패턴 - 게시판 동작 흐름 <br> 
+   1. 웹 브라우저 요청 URL - /BoardWriteForm.bo 발생 <br>
+   2. *.bo 서블릿 주소가 요청되면 BoardFrontController 실행 <br>
+      => @WebServlet("*.bo") Annotation에 의해 Servlet 주소 식별 <br>
+   3. BoardFrontController 에서 Servlet 주소 매핑을 통해 Board 폴더 내의 qna_board_write.jsp 페이지로 포워딩 <br>
+      => Dispatcher 방식 포워딩을 통해 URL 주소 변경없이 view 페이지(.jsp)로 이동  <br>
+          (즉, 주소창에 BoardWriteForm.bo 서블릿 주소가 그대로 유지)<br>
+   4. qna_board_write.jsp 페이지에서 글쓰기 버튼 클릭시(from 태그에서 Action="BoardWritePro.bo" Post방식으로 넘김)<br>
+       => /BoardWritePro.bo 서블릿 주소 요청<br>
+   5. BoardFrontController 에서 BoardWriteProAction 클래스 인스턴스 생성 후 인스턴스 내의 execute() 메서드 호출<br>
+      => 새로운 서블릿 주소(BoardWritePro.bo)로 변경하기 위해 Redirect 방식으로 포워딩<br>
+   6. BoardWriteProAction 클래스에서 글쓰기 요청에 대한 작업을 요청하기 위해 <br>
+       BoardWriteProService 클래스의 registArticle()메서드(글등록) 호출<br>
+   7. registArticle() 메서드에서 글쓰기 작업 요청을 위해 BoardDAO 클래스의 insertArticle() 메서드 호출<br>
+   8. insertArticle() 메서드에서 글쓰기 작업 수행 후 글쓰기 결과값을 리턴 <br>
+       (글 쓰기 성공시 1, 실패시 0리턴 됨)<br>
+   9. BoardDAO 로부터 리턴값을 전달 받은 BOardWriteProService 클래스에서 글쓰기 성공 여부 판별<br>
+      => 글 쓰기 성공 시 boolean 값 isWriteSuccess 를 true 로 변경하고, commit 작업 수행<br>
+   10. boolean 값을 리턴 받은 BoardWriteProACtion 클래스에서 <br>
+       1) 리턴값이 false 일 경우 자바 스크립트를 사용하여 실패 메시지 출력 후  이전 페이지로 돌아가기 수행<br>
+       2) 리턴값이 true 일 경우 ActionForward 객체를 생성하여 BoardList.bo 서블릿 주소를 Redirect 방식으로 포워딩 설정<br>
+          => ActionList.bo 서블릿 주소를 Redirect 방식으로 포워딩 설정<br>
+   11. ActionForward 객체를 리턴받은 BoardFrontController 클래스에서 ACtionForward 객체의 포워딩 방식에 따라<br>
+       Redirect 또는 Dispatcher 방식으로 포워딩 수행<br>
 
-</pre>
+</p>
