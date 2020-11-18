@@ -123,5 +123,5 @@ POST 방식 : 파라미터를 본문(body)안에 담아서 전송 -> 보안이 �
           
    11. ActionForward 객체를 리턴받은 BoardFrontController 클래스에서 ACtionForward 객체의 포워딩 방식에 따라<br>
        Redirect 또는 Dispatcher 방식으로 포워딩 수행<br>
-
+ 
 </p>
