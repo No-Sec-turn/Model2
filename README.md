@@ -12,7 +12,7 @@
    -> chrome 설정<br>
 
 4. general - Workspace<br>
-   -> Text file encoding : UTF-8 로 설정<br>
+   -> Text file encoding : UTF-8 로 설정 <br>
 
 5. Server - Server Runtime Environments<br>
   -> Add  -> Apach Tomcat 8.0 next -> Tomcat installation directory : C드라이버 Appach Tomcat 폴더 설정 -> Finish<br>
