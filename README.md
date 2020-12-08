@@ -1,6 +1,6 @@
 # Model2
 <b>2020.11.02 수업내용 정리</b><br>
-  Model2 개발을 위한 WorkBench 환경 설정 <br>
+  Model2 개발을 위한 WorkBench 환경 설정  <br>
    
   1. file - switch workspace<br>
     ->새로운 워크스페이스 설정 후 launch<br>
