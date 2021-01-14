@@ -6,7 +6,7 @@
     ->새로운 워크스페이스 설정 후 launch<br>
 
 2. general - Editor - Text Editor - Spelling<br>
-   -> Enable spell checking 체크 해제 <br>
+   -> Enable spell checking 체크 해제  <br>
 
 3. general - Web Browser <br>
    -> chrome 설정<br>
